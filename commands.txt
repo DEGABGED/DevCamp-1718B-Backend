@@ -1,2 +1,3 @@
 rails g model Article title:string text:string
 rails db:migrate
+rails g migration add_author_to_articles author:string
