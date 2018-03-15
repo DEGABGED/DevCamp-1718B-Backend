@@ -1,3 +1,8 @@
 rails g model Article title:string text:string
 rails db:migrate
+
 rails g migration add_author_to_articles author:string
+rails db:migrate
+
+rails g model Comment author:string body:text article:references
+rails db:migrate
