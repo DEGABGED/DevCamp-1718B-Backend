@@ -1,3 +1,5 @@
 <h1><%= @article.title %></h1>
 <h4>Published in <%= friendly_date @article.created_at %></h4>
 <p><%= @article.text %></p>
+
+<%= link_to "Back", :back %>
