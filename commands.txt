@@ -6,3 +6,5 @@ rails db:migrate
 
 rails g model Comment author:string body:text article:references
 rails db:migrate
+
+rails g controller articles index show new edit
