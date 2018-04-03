@@ -2,4 +2,23 @@
 <h4>Published in <%= friendly_date @article.created_at %></h4>
 <p><%= @article.text %></p>
 
+<h4>New Comment</h4>
+<%= form_for [@article, @article.comments.build] do |f| %>
+  <div class='field'>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class='field'>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class='action'>
+    <%= f.submit %>
+  </div>
+<% end %>
+<br>
+<% @article.comments.each do |comment| %>
+  <%= comment.author %> said: "<%= comment.body %>"<br>
+<% end %>
+<br>
 <%= link_to "Back", :back %>
